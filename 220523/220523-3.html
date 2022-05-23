@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文档的加载</title>
+    <script type="text/javascript" src="js/220523-3.js">
+        /*Cannot set properties of null (setting 'onclick')
+                                没有加载出来
+                                浏览器在加载一个页面时，是按照自上而下的顺序加载的，
+                                读取到一行就运行一行，如果script标签到页面的上边
+                                在代码执行时，页面还没有加载出来，dom对象也没有加载
+                                会导致无法获取到dom对象
+                                */
+        /*将js代码编写到页面的下部就是为了可以在页面加载完毕以后在执行js代码
+         */
+
+        /*我们希望就在上面，但是js代码在整个页面加载之后在执行
+        那我们如果找到一个属性让他绑定函数是不是就可在整个文档加载之后在执行
+        onload:一张页面或一幅图像完成加载
+
+        */
+    </script>
+</head>
+
+<body>
+    <button id="btn">我是一个按钮</button>
+
+</body>
+
+</html>
