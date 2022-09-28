@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        我是div元素里的内容
+        <span>我是div元素里span标签里的内容</span>
+    </div>
+    <script>
+        /*
+            修改元素里的内容
+            innerText 不能够识别元素中的标签，只保留文字，忽略空格和忽略换行
+            innerHTML  能够识别元素中的标签，保留文字和标签，空格和换行不会忽略掉，会保留下来
+            这两个方法可以读，可以写
+        */
+       var div=document.querySelector("div");
+       console.log(div.innerHTML);//可以读
+       console.log(div.innerText);
+       var a=div.innerText="123";//可以写
+       console.log(a);
+    </script>
+</body>
+</html>

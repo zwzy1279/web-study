@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width:500px;
+            height:30px;
+ 
+        }
+        .change {
+            background:pink;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <tbody>
+            <div class="d">
+                <tr>
+                    <td>张三</td>
+                    <td>男</td>
+                    <td>23000</td>
+                </tr>
+            </div>
+            <div class="d">
+                <tr>
+                    <td>李四</td>
+                    <td>男</td>
+                    <td>16000</td>
+                </tr>    
+            </div>            
+            <div class="d">
+                <tr>
+                    <td>王五</td>
+                    <td>男</td>
+                    <td>20000</td>
+                </tr>
+            </div>
+        </tbody>
+    </form>
+    <script>
+        //当鼠标经过某一行时，背景颜色变成粉红色
+        //当鼠标移开某行时，某行回复成默认的
+        //var div=document.getElementsByTagName("div");
+        var div=document.getElementsByClassName("d");
+        //var div1=div[0];
+        //console.log(div1);
+        //console.log(div);
+        //for循环，遍历每一个div
+        for(var i=0;i<3;i++){
+            div[i].setAttribute("index",i);
+            
+            div[i].onmouseover=function(){
+                var index = this.getAttribute("index");
+                //console.log(i);
+                div[index].className="d change";
+            }
+            div[i].onmouseout=function(){
+                var index = this.getAttribute("index");
+                div[index].className="d";
+            }
+        }
+    </script>
+</body>
+</html>

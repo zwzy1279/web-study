@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrong {
+            color:red;
+        }
+        .right {
+            color:green;
+        }
+    </style>
+</head>
+<body>
+    <div id="div">
+        <input type="password" id="input" value="">
+        <span id="span">密码要在6-16位</span>
+    </div>
+    <script>
+        //文本框获得焦点光标  onfocus
+        //文本框失去文本光标  onblur
+        //当输入框失去光标时，判断文本框位数 onblur
+        //如果不在6-16，则span中显示密码错误，密码位数应该在6-16位，文字颜色为红色
+        //如果在6-16，则span中显示密码正确，文字颜色为绿色
+        var input=document.getElementById("input");
+        var span=document.getElementById("span");
+        //console.log(input.value.length);
+        input.onfocus=function(){
+            span.className="";
+            span.innerText="密码要在6-16位";
+        }
+        input.onblur=function(){
+            if(input.value.length>16||input.value.length<6){
+                span.className="wrong";
+                span.innerText="密码错误，密码位数应该在6-16位";
+            }
+            else{
+                span.className="right";
+                span.innerText="密码正确";
+            }
+        }
+    </script>
+</body>
+</html>

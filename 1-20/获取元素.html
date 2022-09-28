@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="num">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li class="six">5</li>
+        <li class="six">6</li>
+    </ul>
+    <button>我是一个按钮</button>
+    <button>我是第二个按钮</button>
+    <script>
+        /*
+        一.获取元素的方法
+            获取有id的元素      document.getElementById("btn")
+            获取有class的元素   document.getElementsByClassName("btn2") 根据类名返回所有元素对象集合
+            单纯获取所有标签同名的元素   document.getElementsByTagName("div")
+            这些有加s的，getElements获取的都是符合选择器的元素集合
+
+            特殊：id要加#，class要加.  document.querySelector("") 根据选择器返回所有元素对象的第一个
+                                      document.querySelectorAll("") 根据选择器返回所有元素对象集合
+            document.querySelector("#btn")
+            document.querySelector(".btn")
+            document.querySelector("button")
+
+            特殊：获取body和html标签
+            var body=document.body;
+            var html=document.documentElement;
+
+        */
+       //获取id为num的元素
+       var num=document.getElementById("num");
+       console.log(num);
+
+       //获取类名为six的所有元素集合
+       //方法一
+       var allSix=document.getElementsByClassName("six");//注意有加s
+       console.log(allSix);
+       //方法二
+       var sixAll=document.querySelectorAll(".six");
+       console.log(sixAll);
+
+       //获取标签名为button的元素
+       var button=document.getElementsByTagName("button");
+       console.log(button);
+
+       //获取类名为six的第一个元素
+       //方法一，利用集合的第一个
+       var six1=document.getElementsByClassName("six")[0];
+       console.log(six1);
+       //方法二：直接用返回元素集合的第一个
+       var six11=document.querySelector(".six");
+       console.log(six11);
+
+       //获取body元素
+       var body=document.body;
+       console.log(body);
+       //获取html元素
+       var html=document.documentElement;
+       console.log(html);
+       //因为html就相当于document
+
+    </script>
+</body>
+</html>

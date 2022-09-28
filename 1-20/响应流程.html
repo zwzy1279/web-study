@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点我弹出弹窗</button>
+    <script>
+        /*
+            首先确定事件源，其次确定事件类型（为事件源绑定事件类型），最后进行事件程序流程（通过函数赋值出发事件后想要实现的效果程序）
+
+        */
+       //为button绑定单机响应事件，单击后出现弹窗效果
+       //事件源就是button
+       //事件类型就是单击
+       var button=document.getElementById("btn");
+       button.onclick=function(){
+            alert("我是弹窗");
+           //console.log("hello");
+       }
+    </script>
+</body>
+</html>

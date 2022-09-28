@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn{
+            background-color:pink;
+            width:100px;
+            height:100px;
+        }
+        .btn2 {
+            width:500px;
+            height:500px;
+        }
+        div {
+            width:100px;
+            height:100px;
+            background:#bfa;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn">我是一个按钮</button>
+    <div>我是一个盒子</div>
+    <script>
+        /*
+            修改样式属性：
+                方法一：元素.style.样式名（采用驼峰式命名）
+                方法二：元素.className="要添加的类名"；在css样式中，声明一个未被使用，要被使用的类名。然后再触发事件，进行程序处理时添加该类名。
+                        但他会覆盖掉原有存在在该元素的类名。如果要保留原始的类名，则在添加类名的时候，要将原有的类名跟新添加的类名间隔写开在一起
+        */
+       //当点击按钮时，添加btn2的类名
+       var button=document.querySelector(".btn");
+       button.onclick=function(){
+        button.className="btn btn2";//在原有的基础上再添加别的样式
+       }
+       var div=document.getElementsByTagName(div);
+       div.onclick=function(){
+        alert("hello");
+       }
+    </script>
+</body>
+</html>

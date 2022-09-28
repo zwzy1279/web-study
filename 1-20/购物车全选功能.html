@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <thead>
+            <tr>
+                <td>
+                    <input type="checkbox" class="checkAll">
+                </td>
+                <td>全选</td>
+            </tr>
+            <br/>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <input type="checkbox" class="checkAlls">
+                </td>
+                <td>裙子</td>
+            </tr>
+            <br/>
+            <tr>
+                <td>
+                    <input type="checkbox" class="checkAlls">
+                </td>
+                <td>男朋友</td>
+            </tr>
+            <br/>
+            <tr>
+                <td>
+                    <input type="checkbox" class="checkAlls">
+                </td>
+                <td>游玩</td>
+            </tr>
+        </tbody>
+    </form>
+    <script>
+        //当点击了全选，剩下所有的复选框都被自动选上
+        //当点击下面的复选框，没有四个全选上则全选框取消。如若四个都被选上，则全选的复选框也被选上
+        var checkAll=document.getElementsByClassName("checkAll");
+        var checkAlls=document.getElementsByClassName("checkAlls");
+        
+        checkAll.onCheck=function(){
+            for(var i=0;i<checkAlls.length;i++){
+                checkAlls[i].setAttribute("index",i);
+                var index = this.getAttribute("index");
+                checkAlls[index].checked="true";
+            }
+        }
+        var flag=true;//默认被选中
+        for(var i=0;i<checkAlls.length;i++){
+            if(!checkAlls.checked){//不被选中
+                flag=false;
+            }
+        }
+        if(flag){//都被选中的话
+            checkAll.checked="true";
+        }
+    </script>
+</body>
+</html>
